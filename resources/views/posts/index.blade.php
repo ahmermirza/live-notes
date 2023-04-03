@@ -3,17 +3,9 @@
 @section('title', 'Posts | Live Notes')
 
 @section('content')
-    <style>
-        .table tbody tr th,
-        .table tbody tr td {
-            padding-top: 10px !important;
-            padding-bottom: 15px !important;
-        }
-    </style>
-    <link rel="stylesheet" href="{{ asset('css/posts-page.css') }}">
-    <div class="p-5 pt-4 text-center">
+    <div class="p-5 pt-1 text-center">
         <div class="event-schedule-area-two bg-color pad100">
-            <div class="container">
+            <div class="container p-5 pt-4 text-center">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title text-center">
@@ -42,7 +34,7 @@
                                         <tbody>
                                             @if ($posts->count())
                                                 @foreach ($posts as $post)
-                                                    <x-post :post="$post"/>
+                                                    <x-post :post="$post" />
                                                 @endforeach
                                             @else
                                                 <p>There are no posts.</p>
