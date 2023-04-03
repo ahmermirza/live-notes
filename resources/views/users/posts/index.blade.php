@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @push('title')
-    User Profile | Live Notes
+    {{ $user->username }} | Live Notes
 @endpush
 
 @section('content')
@@ -44,3 +44,14 @@
             </div>
         </div>
     @endsection
+
+    @push('scripts')
+        <style>
+            .table tbody tr th,
+            .table tbody tr td {
+                padding-top: 10px !important;
+                padding-bottom: 15px !important;
+            }
+        </style>
+        <link rel="stylesheet" href="{{ asset('css/posts-page.css') }}">
+    @endpush
