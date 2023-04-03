@@ -51,4 +51,18 @@ class User extends Authenticatable
     {
         return $this->hasManyThrough(Like::class, Post::class);
     }
+
+    // Accessor method for Username column
+    // when "username" column is accessed, it will be converted into uppercase
+    public function getUsernameAttribute($value)
+    {
+        return strtoupper($value);
+    }
+
+    // Mutator for Username column
+    // when "Username" will save, it will convert into lowercase
+    // public function setUsernameAttribute($value)
+    // {
+    //     $this->attributes['username'] = strtolower($value);
+    // }
 }
