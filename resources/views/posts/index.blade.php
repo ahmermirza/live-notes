@@ -1,5 +1,16 @@
 @extends('layouts.app')
 
+@push('custom-styling')
+    <style>
+        .table tbody tr th,
+        .table tbody tr td {
+            padding-top: 10px !important;
+            padding-bottom: 15px !important;
+        }
+    </style>
+    <link rel="stylesheet" href="{{ asset('css/posts-page.css') }}">
+@endpush
+
 @section('title', 'Posts | Live Notes')
 
 @section('content')
@@ -57,14 +68,3 @@
         x[0].className = "pagination d-flex justify-content-end"
     </script>
 @endsection
-
-@push('scripts')
-    <style>
-        .table tbody tr th,
-        .table tbody tr td {
-            padding-top: 10px !important;
-            padding-bottom: 15px !important;
-        }
-    </style>
-    <link rel="stylesheet" href="{{ asset('css/posts-page.css') }}">
-@endpush

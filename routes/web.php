@@ -26,6 +26,7 @@ Route::get('/register', 'Auth\RegisterController@index')->name('register');
 Route::post('/register', 'Auth\RegisterController@store');
 
 Route::get('/posts', 'PostController@index')->name('posts');
+Route::get('/posts/{post}', 'PostController@show')->name('posts.show');
 Route::post('/posts', 'PostController@store');
 Route::delete('/posts/{post}', 'PostController@destroy')->name('post.destroy');
 

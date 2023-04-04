@@ -42,7 +42,7 @@
         </div>
     </td>
     <td class="d-flex border-bottom-0 my-3">
-        <a class="btn btn-primary me-2" href="#">Read More</a>
+        <a class="btn btn-primary me-2" href="{{ route('posts.show', $post) }}">Read More</a>
         @can('delete', $post)
             <form action="{{ route('post.destroy', $post) }}" method="POST">
                 @csrf
