@@ -21,6 +21,15 @@ class User extends Authenticatable
 
     /**
      * The attributes that should be hidden for arrays.
+     * 
+     * The goal is to remove them from your API responses.
+
+     * However, you might still use them when you are working with your models in controllers, services... that's why you see them.
+     * You can check it works by doing:
+     * 
+     * $user = User::first(); //hidden attributes included
+     * $user->toArray(); // hidden attributes NOT included
+     * $user->toJson(); // hidden attributes NOT included
      *
      * @var array
      */
